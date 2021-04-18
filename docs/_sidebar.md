@@ -1,0 +1,2 @@
+- [100 Days of Python](/)
+- [Day 01 - Band Name Generator](/day01.md)
