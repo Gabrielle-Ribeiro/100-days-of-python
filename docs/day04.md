@@ -1,4 +1,4 @@
-# Treasure Island
+# Rock, Paper, Scissors
 
 **Level:** Beginner.
 
