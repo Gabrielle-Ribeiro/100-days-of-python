@@ -3,3 +3,4 @@
 - [Day 02 - Tip Calculator](/day02.md)
 - [Day 03 - Treasure Island](/day03.md)
 - [Day 04 - Rock, Paper, Scissors](/day04.md)
+- [Day 05 - Password Generator](/day05.md)
