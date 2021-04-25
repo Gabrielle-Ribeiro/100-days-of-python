@@ -13,3 +13,4 @@ This is a repository for the 100 days of code challenge. 100 days, 100 projects 
 - [Day 02 - Tip Calculator](https://github.com/Gabrielle-Ribeiro/100-days-of-python/tree/main/src/day02%20-%20tip%20calculator)
 - [Day 03 - Treasure Island](https://github.com/Gabrielle-Ribeiro/100-days-of-python/tree/main/src/day03%20-%20treasure%20island)
 - [Day 04 - Rock, Paper, Scissors](https://github.com/Gabrielle-Ribeiro/100-days-of-python/tree/main/src/day04%20-%20rock%2C%20paper%2C%20scissors)
+- [Day 05 - Password Generator](https://github.com/Gabrielle-Ribeiro/100-days-of-python/tree/main/src/day05%20-%20password%20generator)
