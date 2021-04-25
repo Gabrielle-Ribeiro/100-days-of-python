@@ -1,2 +1,4 @@
 - [100 Days of Python](/)
 - [Day 01 - Band Name Generator](/day01.md)
+- [Day 02 - Tip Calculator](/day02.md)
+- [Day 03 - Treasure Island](/day03.md)

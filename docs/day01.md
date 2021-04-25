@@ -2,6 +2,8 @@
 
 **Level:** Beginner.
 
+<center> <img src="https://media2.giphy.com/media/ZYK8aHHAn5nYBhSxvV/giphy.gif?cid=ecf05e47y7ri0ganm5whdfcbidmwr1jgbya2b0n9uqpd0upa&rid=giphy.gif&ct=g" height="250"> </center>
+
 ## About the project
 
 <p align="justify">This is a simple project of day #01 of the 100 days of Code in Python. This code consists of a name generator for bands, based on your answers to some questions.</p>
