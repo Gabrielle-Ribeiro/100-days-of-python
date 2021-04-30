@@ -34,8 +34,6 @@ elif category == 2:
     
 random_word = random.choice(word_list)
 
-#print(f"Psssst, the chosen word is {random_word}.")
-
 for blank in random_word:
     if blank == " ":
         display.append(" ")
