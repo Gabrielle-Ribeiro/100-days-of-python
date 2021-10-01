@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import random
+import json
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def generate_password():
@@ -39,6 +40,12 @@ def get_entries():
     website_name = website_entry.get()
     username = username_entry.get()
     password = password_entry.get()
+    new_data = {
+        website_name: {
+            "email": username,
+            "password": password,
+        }
+    }
 
     if len(website_name) == 0 or len(username) == 0 or len(password) == 0:
         messagebox.showinfo(title='Oops', message="Please don't leave any fields empty!")
@@ -48,14 +55,49 @@ def get_entries():
                                                 f'\nPassword: {password} \nIs it ok to save?')
 
         if is_ok:
-            file = open("data.txt", "a")
-            file.write(f'{website_name} | {username} | {password}\n')
-            file.close()
-
+            try:
+                with open("data.json", "r") as file:
+                    data = json.load(file)
+            except FileNotFoundError:
+                with open("data.json", "w") as file:
+                    json.dump(new_data, file, indent=4)
+            else:
+                data.update(new_data)
+                with open("data.json", "w") as file:
+                    json.dump(data, file, indent=4)
+            
         username_entry.delete(0, END)
         username_entry.insert(0, "gabrielleribeiro2010@gmail.com")
         website_entry.delete(0, END)
         password_entry.delete(0, END)
+
+# ---------------------------- SEARCH PASSWORD ------------------------ #
+
+def search_website():
+    website_name = website_entry.get()
+
+    if website_name == "":
+        messagebox.showinfo(title='Oops', message="Please don't leave Website field empty!")
+    else:
+        try:
+            with open("data.json", "r") as file:
+                data = json.load(file)
+        except FileNotFoundError:
+            messagebox.showinfo(title='Oops', message="There's no website registered yet!")
+        else:
+            try:
+                website_info = data[website_name]
+            except KeyError:
+                messagebox.showinfo(title='Oops', message=f"{website_name} is not registered yet!")
+            else:
+                username = website_info["email"]
+                password = website_info["password"]
+                messagebox.showinfo(title=f'{website_name} info', 
+                                    message=f"{website_name} \n\nUsername: {username} \n\nPassword: {password}")
+
+
+
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -71,9 +113,12 @@ canvas.grid(column=1, row=0)
 website_label = Label(text="Website:")
 website_label.grid(column=0, row=1)
 
-website_entry = Entry(width=45)
-website_entry.grid(column=1, row=1, columnspan=2, sticky=W)
+website_entry = Entry(width=25)
+website_entry.grid(column=1, row=1, sticky=W)
 website_entry.focus()
+
+search_button = Button(text="Search", width=13, command=search_website)
+search_button.grid(column=2, row=1, sticky=W)
 
 username_label = Label(text="Email/Username:")
 username_label.grid(column=0, row=2)
